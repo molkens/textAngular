@@ -1,5 +1,5 @@
 {
-  "name": "textAngular",
+  "name": "textAngular-libreOfficeFix",
   "version": "1.5.16",
   "main": [
     "./dist/textAngular.js",
@@ -7,7 +7,7 @@
     "./dist/textAngularSetup.js",
     "./dist/textAngular.css"
   ],
-  "description": "A radically powerful Text-Editor/Wysiwyg editor for Angular.js",
+  "description": "Fork textAngular with LibreOffice paste fix",
   "keywords": [
     "editor",
     "angular",
