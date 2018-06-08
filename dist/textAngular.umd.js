@@ -4,13 +4,13 @@
     define('textAngular', ["rangy","rangy/lib/rangy-selectionsaverestore"], function (a0,b1) {
       return (root['textAngular.name'] = factory(a0,b1));
     });
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && module.exports) {
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
     module.exports = factory(require("rangy"),require("rangy/lib/rangy-selectionsaverestore"));
   } else {
-    root['textAngular'] = factory(rangy);
+    root['textAngular'] = factory(root["rangy"]);
   }
 }(this, function (rangy) {
 
@@ -3250,8 +3250,8 @@ angular.module('textAngular.taBind', ['textAngular.factories', 'textAngular.DOM'
                         /* istanbul ignore else: don't care if nothing pasted */
                         //console.log(text);
                         if(text && text.trim().length){
-                            // test paste from word/microsoft product
-                            if(text.match(/class=["']*Mso(Normal|List)/i) || text.match(/content=["']*Word.Document/i) || text.match(/content=["']*OneNote.File/i)){
+                            // test paste from word/microsoft/libreOffice/openOffice product
+                            if(text.match(/class=["']*Mso(Normal|List)/i) || text.match(/content=["']*Word.Document/i) || text.match(/content=["']*OneNote.File/i) || text.match(/content=["']*LibreOffice/i) || text.match(/content=["']*OpenOffice/i )){
                                 var textFragment = text.match(/<!--StartFragment-->([\s\S]*?)<!--EndFragment-->/i);
                                 if(!textFragment) textFragment = text;
                                 else textFragment = textFragment[1];
